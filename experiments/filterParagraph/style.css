@@ -1,0 +1,21 @@
+.first-child {
+    color: red;
+}
+
+.last-child {
+    color: aqua;
+}
+
+#num1-0 {
+    color: yellow;
+}
+
+.first-first {
+    color: blueviolet;
+    font-size: 2em;
+}
+
+.last-last {
+    color: green;
+    font-size: 4em;
+}

@@ -1,0 +1,10 @@
+.suggestions {
+    border: solid 3px red;
+    padding: 0;
+}
+
+li {
+    width: 100%;
+    list-style: none;
+    padding: 0.4em;
+}

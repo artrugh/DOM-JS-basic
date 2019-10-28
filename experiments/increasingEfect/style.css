@@ -1,0 +1,17 @@
+p {
+    font-size: 2em;
+    margin: 0;
+    color: magenta;
+
+}
+
+div {
+    /* the height of the divparent must be as height as the biggest number */
+    height: 100px; 
+    /* if we want to center the number in a responsive way the width must be 100vw */
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

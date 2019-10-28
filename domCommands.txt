@@ -1,0 +1,137 @@
+Commands for Dom manipulation in JS.
+
+- Window = represents the browser window - TOP LEVEL OBJECT
+
+-Document = main object of the visible DOM- contains HTML etc.
+
+
+document
+.domain
+.title.
+.doctype
+.body
+.all (this is a collection)
+.all[x] (select a specific line of the colection, like in a array)
+.forms
+.link
+.image
+.URL
+
+
+SELECTORS / GET AN ELEMENT FROM THE HTML
+
+document
+.getElementByID('title') Css = #title
+.getElementByClassName('section') Css = .section
+.getElementByTagName('header') Css = header
+.querySelector('#title' || '.section' || 'header') aplies only for one element
+.querySelectorAll('#title')
+
+some details
+li = document.querySelector(nav ul li);
+section = document.querySelector('.section:nth-child(2)' || 'section:last-child') =>pseudo css selector can be applied
+
+LOOPS
+
+sections = document.querySelectorAll('.section')
+sections[1] => select the first child as in an array
+
+[...sections].map(x => x.style.backgroundColor = 'red');
+
+select a ParentElement
+
+sections.parentElement.style.backgroundColor = 'red';
+
+select a childElement
+
+section.children.style.backgroundColor = 'blue';
+
+or a specific child
+section.children[2].backgroundColor = 'blue';
+
+CREATE AN ELEMENT
+
+document.createElement('div');
+
+SET AN ATTRIBUTE
+
+div.setAttribute('title', Hello Div);
+a.setAttribute('href', 'link' );
+
+APPEND A CHILD
+
+where.appendChild(element which want to be append);
+
+APPEND BEFORE
+
+where.insertBefore('element');
+
+ADD and REMOVE A CLASS
+
+section.classList.add('items-list');
+section.classList.remove('items-list');
+
+REMOVE THE WHOLE ELEMENT
+
+section.remove();
+
+ADD A TEXT
+
+section.textContent = 'Hi, I am a text';
+(replace the content)
+section.innerText = 'Hi, I am a text';
+section.innerHTML = 'Hi, I am a text';
+section.innerHTML = '<h2>Hi, I am a text</h2>';
+(creates a new HTML element as a child element)
+
+EVENTS
+
+window.addEventListener('click' || 'mousedown' || 'mousedown' && e(event) => { something}); basic structure.
+
+e.preventDefault(); used when an element should not behave as normally. A good exmple could be an a href;
+
+e.button === x (indicates the button which has been clicked);
+
+e.type === ['mouseleave', 'click', 'mouseover'];
+
+e.key === [ a, b, c, d, e ...];
+
+e.charCode === 76;
+e.keyCode === 76;
+
+'DOMContentLoaded' means the web has already been loaded.
+
+e.clientX && e.clientY reference of the position relative  to the viewport
+
+e.preventDefault();
+
+if (typeof e.cancelable !== 'boolean' || e.cancelable) { e.preventDefault();}
+
+REMOVE EVENTS
+
+function nameOfTheFunction (e) {e.type === 'click'}
+element.removeEventListener('e.type', nameOfTheFunction) so gonna need a function so later can be removed
+
+or
+
+element.removeEventLister('click', e => {
+(e.key === 'a'){ e.target.style.backgroundColor = 'red'}});
+
+
+document.body.contains('header');
+
+e.stopPropagation() Propagation means bubbling up to parent elements or capturing down to child elements.
+only used when you apply an event in a child element and it bubbles to the pearent element .
+
+Three important concepts [ DELEGATE, BUBBLE, CAPTURE ];
+
+DELEGATE: listening to an event in an element.
+BUBBLE: bubble up to parent elements. How to stop it? e.stopPropagation()
+CAPTURING: some events don't bubble up (focus), they need a capturing, setting them to true.
+
+
+EVENT DELEGATION means listerner an event to a parent element affectiong the children. 
+parentElement ul.addEventListener('click', e => {
+if (e.target.nodeName == 'LI') {something}
+if (e.target.matches('a .link') {something}
+};) 

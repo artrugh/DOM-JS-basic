@@ -1,0 +1,22 @@
+#typed-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.typed-white {
+    color: white;
+}
+
+.typed-black {
+    color: black;
+}
+
+#typed-sign {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#text {
+    margin: 0;
+}

@@ -1,0 +1,1 @@
+export function greetings(name) { `WasUp ${name}!` };
