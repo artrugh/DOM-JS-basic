@@ -22,30 +22,37 @@ const ul = document.querySelector('ul');
 // //  FUNCTIONS // //
 
 form.addEventListener('submit', e => {
+
     e.preventDefault();
-    //console.log(e);
+
+    //create a lis element
     let li = document.createElement('li');
+    //assing a value from the event
     li.innerHTML = input.value;
+    //create done button
     let done = document.createElement('button');
     done.innerHTML = 'done';
+    //create delete button
     let delet = document.createElement('button');
     delet.innerHTML = 'delete';
     delet.setAttribute('id', 'delete');
+    //append the child elements
     ul.appendChild(li);
     li.appendChild(done);
     li.appendChild(delet);
+    // set the value empty
     input.value = '';
 
+    //create done function setting a class to style it later
     done.addEventListener('click', () => {
         li.className = 'done';
         console.log(li);
 
     });
-
+    //create delete function which remove the li
     delet.addEventListener('click', () => {
 
         li.parentNode.removeChild(li);
     })
-
 
 });

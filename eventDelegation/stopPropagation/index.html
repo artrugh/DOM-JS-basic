@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>book</title>
+    <title>stopPropagation</title>
 </head>
-<html>
 
 <body>
     <p id="demo"> Hello Ho<button id="button12"> Button2 </button> </p>
     <script>
         // Event Listener on the Button and it's logic
-        document.getElementById("button12").addEventListener("mousedown", function (event) {
+        document.getElementById("button12").addEventListener("mousedown", (e => {
             alert("button clicked");
-            // event.stopPropagation(); This make that the alert('Pragraph clicked') doesn't affect the button 12.
-        });
+            e.stopPropagation();
+            // This make that the alert('Pragraph clicked') doesn't affect the button 12.
+        }));
         // Event Listener on the paragraph element with it's logic:
-        document.getElementById("demo").addEventListener("mousedown", function (event) {
+        document.getElementById("demo").addEventListener("mousedown", (e => {
             alert("Paragraph clicked");
-        });
+        }));
     </script>
 </body>
 

@@ -1,5 +1,7 @@
 // import { days as deis, months as mons } from "./arrays.js"
+//data
 import { days, months } from "./arrays.js"
+//function
 import { greetings } from "./functions.js";
 
 const text1 = document.querySelector('h1');

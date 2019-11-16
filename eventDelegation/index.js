@@ -1,6 +1,7 @@
 // Event Delegation
-/// Event delegation allows you to avoid adding event listeners to specific nodes.
-// Instead the event listener is added to one parent
+
+// Event delegation allows you to avoid adding event listeners to specific nodes.
+// Instead the event listener is added to one parent.
 
 parentList = document.getElementById("parent-list");
 

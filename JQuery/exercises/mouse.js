@@ -16,15 +16,22 @@
 //     ));
 
 
-let button = document.querySelector('button');
+const button = document.querySelector('#button');
+button.style.color = "red";
 
-button.addEventListener('mouseenter mouseleave', e => {
+button.addEventListener('mouseenter', e => {
 
-    if (e.type === 'mouseenter') {
-        button.innerHTML = 'Welcome, stay here forever!';
-        button.style.color = 'chartreuse';
-    } else if (e.type === 'mouseleave') {
-        button.innerHTML = "Don't go please!";
-        button.style.color = 'orangered';
-    }
+    console.log(e.type);
+
+    button.innerHTML = 'Welcome, stay here forever!';
+    button.style.color = 'chartreuse';
 });
+
+button.addEventListener('mouseleave', e => {
+    button.innerHTML = "Don't go please!";
+    button.style.color = 'orangered';
+});
+
+
+
+

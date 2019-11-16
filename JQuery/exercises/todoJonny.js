@@ -1,19 +1,19 @@
 
-// prevents the tab key, so it won't interfere with the form.
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Tab") { e.preventDefault() }
-});
-
+const form = document.querySelector('.form');
 const ul = document.querySelector('.todo-list');
-let todoItems = [];
 const firstLi = document.querySelector("#first-item");
 
-function addTodo(text) {
+let todoItems = [];
+
+//FUNCTIONS
+const addTodo = text => {
+
     const todo = {
         text,
         checked: false, // checkbox
         id: Date.now(), // returns the number of milliseconds elapsed since January 1, 1970, 
     };
+
     todoItems.push(todo);
     // Grab the ul element and insert <li> element before the end off <ul> element
     ul.insertAdjacentHTML('beforeend',
@@ -25,6 +25,7 @@ function addTodo(text) {
                 <i style="pointer-events:none" class="far fa-trash-alt"></i>
             </button>
         </li>`);
+
     // data-key="${todo.id}     <--- to find it in the array later when we need it
     //<input id="${todo.id}     <--- to target label
     //<label for="${todo.id}    <--- to target input
@@ -33,12 +34,13 @@ function addTodo(text) {
     //style="pointer-events:none" <--- So the button can be pressed even if you click in the icon
 }
 
-function toggleDone(key) {
+const toggleDone = key => {
+
     const index = todoItems.findIndex(x => x.id === Number(key));
     todoItems[index].checked = !todoItems[index].checked;
-    // console.log(todoItems[index].checked = !todoItems[index].checked);
 
     const item = document.querySelector(`[data-key='${key}']`);
+
     if (todoItems[index].checked) {
         item.classList.add('done');
     } else {
@@ -46,7 +48,7 @@ function toggleDone(key) {
     }
 }
 
-function deleteTodo(key) {
+const deleteTodo = key => {
     todoItems = todoItems.filter(x => x.id !== Number(key));
     document.querySelector(`[data-key='${key}']`).remove();
 
@@ -55,8 +57,16 @@ function deleteTodo(key) {
     }
 }
 
-//Submit-event
-const form = document.querySelector('.form');
+
+// EVENTS
+
+// prevents the tab key, so it won't interfere with the form.
+
+// form submited
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") { e.preventDefault() }
+});
+
 form.addEventListener('submit', e => {
     e.preventDefault();
     const input = document.querySelector('.todo-input');
@@ -71,8 +81,7 @@ form.addEventListener('submit', e => {
     }
 });
 
-//Done-event
-
+//done event
 ul.addEventListener('click', event => {
     console.log(event.target); // logs element that is clicked
 

@@ -1,0 +1,1 @@
+Learning fetching APIs in VanillaJS

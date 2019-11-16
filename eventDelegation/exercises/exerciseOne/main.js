@@ -1,10 +1,10 @@
 
 let button = document.querySelector('button');
 let image = document.querySelector('img');
-let initial = false;
+
 
 // changing the style of the picture when the button is clicked.
-
+let initial = false;
 button.addEventListener('click', e => {
     initial = !initial;
     if (initial) {
@@ -13,7 +13,6 @@ button.addEventListener('click', e => {
         image.style = 'border: none; padding: 0; opacity: 1; filter: none;';
     }
 })
-
 
 const circle = document.querySelector(".mouse div");
 

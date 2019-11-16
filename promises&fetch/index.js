@@ -1,4 +1,5 @@
-// let p = new Promise((resolve, reject) => { // resolve and reject are the status key of a promise object which is preset JSObject
+// let p = new Promise((resolve, reject) => { 
+// resolve and reject are the status key of a promise object which is preset JSObject
 //     let a = 1 + 1;
 //     if (a == 2) {
 //         resolve('Sucess'); //the message is in brackets
@@ -80,7 +81,8 @@ Promise.all([
     console.log(messages)
 });
 
-Promise.race([ //return only the first video which has been loaded
+Promise.race([ 
+    //return only the first video which has been loaded
     recordVideoOne,
     recordVideoTwo,
     recordVideoThree

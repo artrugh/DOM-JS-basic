@@ -19,9 +19,9 @@ class Film {
         this.film = film;
         this.actors = actors;
         this.addToFilmArr(this);
-    }
+    };
     //Method to add created object to array
-    addToFilmArr() {
+    addToFilmArr = () => {
         filmObjects.push(this);
     }
 }
@@ -73,7 +73,7 @@ const container = document.querySelector('div');
 
 const liArr = [...li];
 
-function delegateDropDown(eventName, fromElement, callback) {
+const delegateDropDown = (eventName, fromElement, callback) => {
     console.log(fromElement);
 
     fromElement.addEventListener(eventName, () => {
@@ -85,11 +85,11 @@ function delegateDropDown(eventName, fromElement, callback) {
     });
 };
 
-function dropDown(e) {
+const dropDown = e => {
 
     //Remove previously inserted actors, if any
     remove();
-
+   
     //Add the class and get all associated children
     e.target.className = 'list-items';
     const liActors = document.querySelectorAll('.list-items ul li');
@@ -111,8 +111,6 @@ function dropDown(e) {
 
 const remove = () => {
 
-    //    console.log(e);
-
     const temp = document.querySelectorAll('.temp');
 
     //Convert node-list into array (many more array methods than node-list methods)
@@ -129,8 +127,11 @@ const remove = () => {
 };
 
 delegateDropDown('click', ul, dropDown);
+
 header.addEventListener('click', () => remove());
 container.addEventListener('click', () => remove());
+
+// rewrite the code in JQ
 
 
 

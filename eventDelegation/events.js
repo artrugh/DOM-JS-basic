@@ -1,4 +1,5 @@
 // events and event listeners (event handlers)
+
 // promt an alert message when the window is clicked
 
 // window.addEventListener("mousedown", e => {

@@ -11,7 +11,6 @@ const normal = document.querySelector('#normal');
 const hard = document.querySelector('#hard');
 const speedNumber = document.querySelector('#speed-number');
 
-
 // // MAIN FUNTION // //
 
 function level(submit, click, mouseover, mouseout, fromElement, breakNumber, min, max, id, chances = 0) {

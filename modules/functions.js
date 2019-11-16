@@ -1,0 +1,1 @@
+export const greetings = (name) =>  `WasUp ${name}!`;
